@@ -1,0 +1,10 @@
+private void cargardatos()
+        {
+            string stArchivo = Application.StartupPath + "\\Ejemplo.txt";
+            FileInfo fileInfo = new FileInfo(stArchivo);
+            FileStream fileStream = fileInfo.Open(FileMode.Append, FileAccess.Write);
+            StreamWriter sr = new StreamWriter(fileStream);
+            sr.WriteLine(stNombre + ";" + "Palabra: " + stPalabra + ";" + intIntentos + " Intentos" + ";" + intCont2 + " Fallidos" + ";" + stResult.ToUpper() + ";" + fecha.ToString("d"));
+            sr.Flush();
+            fileStream.Close();
+        }
